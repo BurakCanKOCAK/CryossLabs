@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BestBefore Tracker Support</title>
+    <meta
+      name="description"
+      content="Support, privacy, and contact information for BestBefore Tracker."
+    />
+    <style>
+      :root {
+        --bg: #09131b;
+        --bg-soft: #10202d;
+        --panel: rgba(255, 255, 255, 0.06);
+        --panel-border: rgba(255, 255, 255, 0.12);
+        --text: #eef4f7;
+        --muted: #8aa0b0;
+        --green: #00e676;
+        --amber: #ffb347;
+        --blue: #69b8ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(0, 230, 118, 0.18), transparent 28%),
+          radial-gradient(circle at top right, rgba(105, 184, 255, 0.14), transparent 30%),
+          linear-gradient(180deg, #081017 0%, #0d1b25 45%, #09131b 100%);
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(980px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 32px 0 56px;
+      }
+
+      .hero {
+        padding: 28px;
+        border: 1px solid var(--panel-border);
+        border-radius: 28px;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+          rgba(8, 16, 23, 0.76);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(0, 230, 118, 0.12);
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 18px 0 10px;
+        font-size: clamp(34px, 6vw, 58px);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+      }
+
+      .hero p {
+        margin: 0;
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 18px;
+        border-radius: 16px;
+        border: 1px solid var(--panel-border);
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .button.primary {
+        background: linear-gradient(135deg, var(--green), #00c853);
+        color: #041009;
+        border-color: transparent;
+      }
+
+      .button.secondary {
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .card {
+        grid-column: span 12;
+        padding: 22px;
+        border-radius: 24px;
+        border: 1px solid var(--panel-border);
+        background: var(--panel);
+        backdrop-filter: blur(10px);
+      }
+
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 22px;
+        letter-spacing: -0.03em;
+      }
+
+      .card p,
+      .card li {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .card ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .meta {
+        display: grid;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .meta-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .meta-row:last-child {
+        border-bottom: 0;
+      }
+
+      .meta-label {
+        color: var(--muted);
+      }
+
+      footer {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 14px;
+        text-align: center;
+      }
+
+      @media (min-width: 760px) {
+        .card.span-7 {
+          grid-column: span 7;
+        }
+
+        .card.span-5 {
+          grid-column: span 5;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="eyebrow">BestBefore Tracker</div>
+        <h1>Support and Help</h1>
+        <p>
+          BestBefore Tracker helps you manage pantry inventory, expiry dates,
+          storage areas, and shopping lists. This page is the public support
+          contact point for App Store users.
+        </p>
+        <div class="hero-actions">
+          <a
+            class="button primary"
+            href="https://github.com/BurakCanKOCAK/BestBefore/issues/new"
+            >Contact Support</a
+          >
+          <a class="button secondary" href="./privacy.html">Privacy Policy</a>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card span-7">
+          <h2>How to get help</h2>
+          <p>
+            For bug reports, support questions, or feature requests, use the
+            public support link below. Include your device model, iOS version,
+            and a short description of the issue.
+          </p>
+          <div class="contact-links">
+            <a
+              class="pill"
+              href="https://github.com/BurakCanKOCAK/BestBefore/issues/new"
+              >Open a support request</a
+            >
+            <a
+              class="pill"
+              href="https://github.com/BurakCanKOCAK/BestBefore"
+              >Project repository</a
+            >
+          </div>
+        </article>
+
+        <article class="card span-5">
+          <h2>App details</h2>
+          <div class="meta">
+            <div class="meta-row">
+              <span class="meta-label">App</span>
+              <strong>BestBefore Tracker</strong>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Platform</span>
+              <strong>iPhone and iPad</strong>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Latest version</span>
+              <strong>1.0.2</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="card span-7">
+          <h2>Common topics</h2>
+          <ul>
+            <li>Managing storage areas such as pantry, fridge, and freezer</li>
+            <li>Tracking expiry dates and local notifications</li>
+            <li>Using barcode scanning to add products faster</li>
+            <li>Managing shopping list items and repeat purchases</li>
+            <li>Understanding ad privacy choices inside the app</li>
+          </ul>
+        </article>
+
+        <article class="card span-5">
+          <h2>Privacy</h2>
+          <p>
+            BestBefore Tracker stores pantry data locally on device. The app may
+            use third-party advertising services such as Google AdMob. Read the
+            full privacy policy for details.
+          </p>
+          <div class="contact-links">
+            <a class="pill" href="./privacy.html">Open privacy policy</a>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        © 2026 Burak Can Kocak
+      </footer>
+    </main>
+  </body>
+</html>
